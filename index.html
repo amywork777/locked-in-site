@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locked In — Phone Lockbox</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'IBM Plex Mono', 'SF Mono', monospace;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 1rem; border-bottom: 2px solid #111; padding-bottom: 0.3rem; }
+    p { margin-bottom: 1rem; }
+    .subtitle { color: #666; margin-bottom: 2rem; }
+    .hero-img { 
+      width: 100%; 
+      max-width: 500px;
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+    }
+    .img-caption { font-size: 0.8rem; color: #666; margin-top: -0.5rem; margin-bottom: 1.5rem; }
+    table { 
+      border-collapse: collapse; 
+      width: 100%; 
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th, td { 
+      border: 1px solid #333; 
+      padding: 0.5rem 0.75rem; 
+      text-align: left; 
+    }
+    th { background: #111; color: #fff; }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    .spec-box {
+      border: 1px solid #ddd;
+      padding: 1rem;
+    }
+    .spec-box h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+    .spec-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .rationale {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-left: 3px solid #111;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .process-step {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .process-step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #111;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    .download-btn:hover { background: #333; }
+    .bom-table td:first-child { font-weight: bold; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    footer a { color: #111; }
+    code {
+      background: #f0f0f0;
+      padding: 0.1rem 0.3rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Locked In</h1>
+  <p class="subtitle">A machined aluminum phone lockbox for focused work</p>
+
+  <img src="engineering_drawing.png" alt="Engineering Drawing" class="hero-img" style="max-width: 100%;">
+  <div class="img-caption">Exploded view with dimensions (all measurements in mm)</div>
+
+  <h2>Concept</h2>
+  <img src="inspiration.png" alt="Original concept sketch" class="hero-img">
+  <div class="img-caption">Original concept sketch</div>
+  <p>
+    A precision-machined aluminum box that holds your phone. No locks, no timers, no apps.
+    Just enough friction to make you think twice before reaching for it.
+  </p>
+  <p>
+    The lid attaches with N52 neodymium magnets, strong enough to require intentional effort
+    to open. The satisfying snap when closing creates a psychological commitment to focus.
+  </p>
+
+  <h2>Sizing Rationale</h2>
+  <div class="rationale">
+    <strong>Target device:</strong> iPhone 16 Pro Max (largest current iPhone)<br><br>
+    <strong>Bare phone:</strong> 163 × 77.6 × 8.25 mm<br>
+    <strong>Phone with thin case:</strong> ~168 × 82 × 11 mm<br>
+    <strong>Phone with medium case:</strong> ~170 × 84 × 13 mm<br>
+    <strong>Pocket size:</strong> 175 × 88 × 16 mm<br><br>
+    <strong>Clearance (medium case):</strong> 5mm on length, 4mm on width, 3mm on depth — 
+    fits most cases except heavy-duty rugged cases like OtterBox Defender.
+  </div>
+  <p>
+    The 12mm wall thickness provides structural rigidity and enough material for the 
+    Ø8.2mm magnet pockets in the corners without compromising the rim.
+  </p>
+
+  <h2>Dimensions</h2>
+  <div class="specs-grid">
+    <div class="spec-box">
+      <h3>Exterior (closed)</h3>
+      <div class="spec-value">199 × 112 × 32 mm</div>
+    </div>
+    <div class="spec-box">
+      <h3>Phone pocket</h3>
+      <div class="spec-value">175 × 88 × 16 mm</div>
+    </div>
+    <div class="spec-box">
+      <h3>Wall thickness</h3>
+      <div class="spec-value">12 mm uniform</div>
+    </div>
+    <div class="spec-box">
+      <h3>Weight (estimated)</h3>
+      <div class="spec-value">~450g / 1 lb</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Part</th><th>Dimension</th></tr>
+    <tr><td>Exterior footprint</td><td>199 × 112 mm</td></tr>
+    <tr><td>Total height (closed)</td><td>32 mm</td></tr>
+    <tr><td>Base height</td><td>22 mm</td></tr>
+    <tr><td>Lid height</td><td>10 mm</td></tr>
+    <tr><td>Phone pocket</td><td>175 × 88 × 16 mm deep</td></tr>
+    <tr><td>Wall thickness</td><td>12 mm uniform</td></tr>
+    <tr><td>Pocket corner radius</td><td>3.2 mm (for 1/4" end mill)</td></tr>
+    <tr><td>Exterior corner radius</td><td>3.0 mm</td></tr>
+    <tr><td>Edge breaks</td><td>1.0 mm fillet</td></tr>
+    <tr><td>Magnet pockets (4× per part)</td><td>Ø8.2 × 3.2 mm deep</td></tr>
+    <tr><td>Magnet position</td><td>8mm inset from exterior corners</td></tr>
+  </table>
+
+  <h2>Bill of Materials</h2>
+  <table class="bom-table">
+    <tr><th>Item</th><th>Specification</th><th>Qty</th><th>Notes</th></tr>
+    <tr><td>Base</td><td>6061-T6 Aluminum, machined</td><td>1</td><td>From 201×114×24mm billet</td></tr>
+    <tr><td>Lid</td><td>6061-T6 Aluminum, machined</td><td>1</td><td>From 201×114×12mm billet</td></tr>
+    <tr><td>Magnets</td><td>N52 Neodymium, 8×3mm disc</td><td>8</td><td>4 per part, ~2 lbs pull each</td></tr>
+    <tr><td>Adhesive</td><td>CA glue or 2-part epoxy</td><td>—</td><td>For magnet installation</td></tr>
+    <tr><td>Liner (optional)</td><td>Microfiber or felt, adhesive-backed</td><td>1</td><td>Cut to pocket floor</td></tr>
+  </table>
+
+  <h2>Machining Process</h2>
+  
+  <h3 style="font-size: 1rem; margin: 1.5rem 0 0.5rem;">Base (2 setups)</h3>
+  <div class="process-step" data-step="1.">Face mill top surface of billet</div>
+  <div class="process-step" data-step="2.">Rough phone pocket 175×88×16mm with 1/4" 2-flute end mill, leave 0.5mm stock</div>
+  <div class="process-step" data-step="3.">Finish pocket walls and floor, 3.2mm corner radius from tool geometry</div>
+  <div class="process-step" data-step="4.">Drill 4× magnet pockets: Ø8.2mm × 3.2mm deep</div>
+  <div class="process-step" data-step="5.">Flip part, fixture in soft jaws (pocket side down)</div>
+  <div class="process-step" data-step="6.">Profile exterior contour with 1/4" 3-flute end mill</div>
+  <div class="process-step" data-step="7.">Add 3mm corner fillets on vertical edges</div>
+  <div class="process-step" data-step="8.">Add 1mm edge breaks on bottom perimeter</div>
+
+  <h3 style="font-size: 1rem; margin: 1.5rem 0 0.5rem;">Lid (2–3 setups)</h3>
+  <div class="process-step" data-step="1.">Face both sides to 10mm final thickness</div>
+  <div class="process-step" data-step="2.">Drill 4× magnet pockets from bottom face: Ø8.2mm × 3.2mm deep</div>
+  <div class="process-step" data-step="3.">Profile exterior contour + 3mm corner fillets</div>
+  <div class="process-step" data-step="4.">Add 1mm edge breaks on top and bottom perimeters</div>
+
+  <h3 style="font-size: 1rem; margin: 1.5rem 0 0.5rem;">Tooling</h3>
+  <table>
+    <tr><th>Tool</th><th>Operation</th></tr>
+    <tr><td>1/4" 2-flute carbide end mill</td><td>Pocket roughing and finishing</td></tr>
+    <tr><td>1/4" 3-flute carbide end mill</td><td>Exterior profiling</td></tr>
+    <tr><td>3mm ball end mill</td><td>Corner fillets (or use chamfer tool for edge breaks)</td></tr>
+    <tr><td>8.2mm end mill or drill</td><td>Magnet pockets</td></tr>
+  </table>
+
+  <h3 style="font-size: 1rem; margin: 1.5rem 0 0.5rem;">Finishing</h3>
+  <div class="process-step" data-step="1.">Deburr all edges by hand</div>
+  <div class="process-step" data-step="2.">Bead blast for uniform matte texture</div>
+  <div class="process-step" data-step="3.">Brush finish (linear grain) for premium look</div>
+  <div class="process-step" data-step="4.">Optional: Type II anodize (clear or color)</div>
+
+  <h2>Magnet Assembly</h2>
+  <p>
+    <strong>Important:</strong> Neodymium magnets are brittle ceramic — do NOT press fit. 
+    Use slip fit pockets (8.2mm for 8mm magnets) and secure with CA glue or epoxy.
+  </p>
+  <p>
+    Mark polarity before separating magnets. Base magnets face North up; lid magnets face 
+    South down. Test attraction before gluing.
+  </p>
+  <p>
+    Recommended magnets: <a href="https://www.amazon.com/Hailson-Permanent-Neodymium-Diameter-Magnetic/dp/B0GQPWKDSC" target="_blank">Hailson 8×3mm N52 on Amazon</a>
+  </p>
+
+  <h2>Attachment Geometry Comparison</h2>
+  
+  <table>
+    <tr>
+      <th>Version</th>
+      <th>Est. Cost (per set)</th>
+      <th>DFM Notes</th>
+    </tr>
+    <tr>
+      <td><strong>V1 — Magnets</strong></td>
+      <td>~$137 <span style="color:#4a4;">(cheapest)</span></td>
+      <td>All subtractive ops. 8× drilled holes (~2 min). Add ~$10 for N52 magnets. Simple assembly.</td>
+    </tr>
+    <tr>
+      <td><strong>V2 — Curved Sidewall</strong></td>
+      <td>~$160-180</td>
+      <td>Wave spline requires 3D surfacing toolpaths. Longer machining time. No extra parts.</td>
+    </tr>
+    <tr>
+      <td><strong>V3 — Lego Bump</strong></td>
+      <td>~$145-150</td>
+      <td>Raised studs need material milled away (~10-15 min extra). 8× drilled holes. No extra parts.</td>
+    </tr>
+  </table>
+  
+  <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">
+    Estimates based on CNC shop rates ~$75-150/hr. V1 baseline from Xometry quote ($1,268 for 10 sets).
+  </p>
+
+  <h2>Downloads</h2>
+  
+  <h3 style="font-size: 0.95rem; margin: 1.5rem 0 0.5rem; color: #444;">V1 — Magnets (original)</h3>
+  <a href="locked-in-base.step" class="download-btn">Base STEP</a>
+  <a href="locked-in-lid.step" class="download-btn">Lid STEP</a>
+  <a href="locked-in-base.stl" class="download-btn">Base STL</a>
+  <a href="locked-in-lid.stl" class="download-btn">Lid STL</a>
+  
+  <h3 style="font-size: 0.95rem; margin: 1.5rem 0 0.5rem; color: #444;">V2 — Curved Sidewall</h3>
+  <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Wave spline ridges on base nest into matching grooves in lid</p>
+  <img src="curved-sidewall-render.png" class="hero-img" alt="Curved sidewall render" style="max-width: 400px; margin: 1rem 0;">
+  <a href="locked-in-base-v2-curved.step" class="download-btn">Base STEP</a>
+  <a href="locked-in-lid-v2-curved.step" class="download-btn">Lid STEP</a>
+  <a href="locked-in-base-v2-curved.stl" class="download-btn">Base STL</a>
+  <a href="locked-in-lid-v2-curved.stl" class="download-btn">Lid STL</a>
+  
+  <h3 style="font-size: 0.95rem; margin: 1.5rem 0 0.5rem; color: #444;">V3 — Lego Bump</h3>
+  <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Same geometry on both parts: studs on top, holes on bottom — stackable and interchangeable</p>
+  <a href="locked-in-base-v3-lego.step" class="download-btn">Base STEP</a>
+  <a href="locked-in-lid-v3-lego.step" class="download-btn">Lid STEP</a>
+  <a href="locked-in-base-v3-lego.stl" class="download-btn">Base STL</a>
+  <a href="locked-in-lid-v3-lego.stl" class="download-btn">Lid STL</a>
+  
+  <h3 style="font-size: 0.95rem; margin: 1.5rem 0 0.5rem; color: #444;">Reference</h3>
+  <a href="engineering_drawing.png" class="download-btn">Drawing PNG</a>
+
+  <h2>3D Printing Notes</h2>
+  <p>
+    For prototyping, print in PLA or PETG. Use 8.0mm magnet holes (not 8.2mm) to account for 
+    plastic shrinkage — this gives a friction fit without glue for testing.
+  </p>
+
+  <footer>
+    A collaboration between Amy Zhou and <a href="https://burd.in" target="_blank">Alex Burdin</a> — 2026
+  </footer>
+
+</body>
+</html>
